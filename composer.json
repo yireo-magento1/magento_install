@@ -1,0 +1,28 @@
+{
+    "minimum-stability":"dev",
+    "require": {
+        "magento/ce": "1.9.1.0",
+        "aoepeople/composer-installers": "*"
+    },
+    "repositories": [
+        {"type": "package", "package": {  "name": "magento/ce",  "version": "1.9.1.0", "type": "magento-source",
+                "dist": { "url": "https://github.com/yireo/magento_install/packages/magento-1.9.1.0.tar.gz", "type": "tar" }}}
+    ],
+    "extra": {
+        "installer-paths": {
+            "site": ["type:magento-source"],
+            ".modman/{$vendor}_{$name}/": ["type:magento-module"]
+        }
+    },
+    "config": {
+    "discard-changes": true
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "mkdir -p ./.modman && echo \"site/\" > ./.modman/.basedir"
+        ],
+        "post-update-cmd": [
+            "modman deploy-all --force"
+        ]
+    }
+}
