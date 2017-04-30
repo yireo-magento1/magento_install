@@ -5,8 +5,17 @@
         "aoepeople/composer-installers": "*"
     },
     "repositories": [
-        {"type": "package", "package": {  "name": "magento/ce",  "version": "1.9.1.0", "type": "magento-source",
-                "dist": { "url": "https://github.com/yireo/magento_install/packages/magento-1.9.1.0.tar.gz", "type": "tar" }}}
+        {
+            "type": "package", 
+            "package": {
+                "name": "magento/ce",
+                "version": "1.9.1.0",
+                "type": "magento-source",
+                "dist": {
+                    "url": "https://github.com/yireo/magento_install/raw/master/packages/magento-1.9.1.0.tar.gz", "type": "tar"
+                }
+            }
+        }
     ],
     "extra": {
         "installer-paths": {
